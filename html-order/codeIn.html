@@ -1,0 +1,580 @@
+<!-- this code is hrom homepage.html and css kamko 28/November/2023 -->
+<style>
+
+._fsEsY-par {
+	container-type: inline-size;
+	
+	--_fsEsY-real-width-1procent:  calc( (var(--_fsEsY-real-width-px)              ) / 100);
+	--_fsEsY-real-height-1procent: calc( (var(--_fsEsY-real-width-px) / 1520 * 782 ) / 100);
+
+	--_fsEsY-real-1px:             calc( (var(--_fsEsY-real-width-px) / 1520));
+}
+
+
+/* <article class="_fsEsY"> */
+._fsEsY {
+	display: grid;
+	/*--_fsEsY-height: 802px;*/
+	
+	--_fsEsY-height: calc( 100cqw / (1520 / 782) );
+	--_fsEsY-width: 100cqw;
+	height: calc( 100cqw / (1520 / 782) );
+	
+	overflow: hidden;
+	
+	grid-template-columns: repeat(100, 1%);
+	/* grid-template-rows: repeat(100, calc(var(--_fsEsY-height)/100));  // DONT: dont set this prop to 100, the rows might be less then 100 */
+
+	margin-block: 20px;
+
+	--_fsEsY_gap: 0Q;
+	margin: 20px calc(var(--_fsEsY_gap) * -1);
+
+
+	padding-inline: calc( var(--_fsEsY_gap) / 2);
+}
+
+
+._fsEsY:not(.loaded) {
+	 grid-template-rows: repeat(100, calc(var(--_fsEsY-height)/100));
+}
+
+
+:where(._fsEsY > section:not([hidden])) {
+	display: block;
+
+}
+:where(._fsEsY > *) {
+	/*defaults*/
+	--_fsEsY-item-width: 25;
+	--_fsEsY-item-height: 50;
+	--_fsEsY_gap: 0Q;
+}
+
+
+._fsEsY > * {
+	
+	margin:
+		calc( var(--_fsEsY-real-1px) * var(--_fsEsY_gap-top)    )
+		calc( var(--_fsEsY-real-1px) * var(--_fsEsY_gap-right)  )
+		calc( var(--_fsEsY-real-1px) * var(--_fsEsY_gap-bottom) )
+		calc( var(--_fsEsY-real-1px) * var(--_fsEsY_gap-left)   )
+	;
+
+
+	/*height: calc(  var(--_fsEsY-real-height-1procent) * var(--_fsEsY-item-height)     );*/
+	/*width:  calc(  var(--_fsEsY-real-width-1procent)  * var(--_fsEsY-item-width)      );*/
+	height: calc(  var(--_fsEsY-real-height-1procent) * var(--_fsEsY-item-height)    -   ( ( var(--_fsEsY_gap-top)  + var(--_fsEsY_gap-bottom) ) * var(--_fsEsY-real-1px) )  );
+	width:  calc(  var(--_fsEsY-real-width-1procent)  * var(--_fsEsY-item-width)     -   ( ( var(--_fsEsY_gap-left) + var(--_fsEsY_gap-right)  ) * var(--_fsEsY-real-1px) )  );
+	
+
+
+	grid-column: span var(--_fsEsY-item-width);
+	grid-row: span var(--_fsEsY-item-height);
+	
+	/*height: calc(  var(--_fsEsY-height) / 100 * var(--_fsEsY-item-height)  - var(--_fsEsY_gap) );*/
+	/*grid-area: span var(--_fsEsY-item-width) / span var(--_fsEsY-height);*/
+	/*grid-area: span 25 / span 50;
+	
+ 
+ width: calc(100% - (var(--positionImageRight) + var(--positionImageLeft)));
+	margin:
+					calc( var(--positionImageTop) )
+					calc( var(--positionImageRight) )
+					calc( var(--positionImageBottom) )
+					calc( var(--positionImageLeft) )
+				;
+	
+	*/
+
+
+
+}
+
+section > img {
+	padding:
+		calc( var(--positionImageTop) * 1% )
+		calc( var(--positionImageRight) * 1% )
+		calc( var(--positionImageBottom) * 1% )
+		calc( var(--positionImageLeft) * 1% )
+	;
+	 object-fit: contain;
+	 width: 100%;
+	 height: 100%;
+}
+
+section > .text {
+	
+	 width: 100%;
+	 height: 100%;
+	 
+	 
+}
+section > .text > :is(.text1, .text2) {
+	 font-size: calc( var(--_fsEsY-real-width) / 1520  * (var(--_fsEsY-data-text-text_font_size_rem) * 1pt ) );
+}
+
+/*section > img.v2 {
+
+	margin:
+					calc( var(--positionImageTop) * 1% )
+					calc( var(--positionImageRight) * 1% )
+					calc( var(--positionImageBottom) * 1% )
+					calc( var(--positionImageLeft) * 1% )
+				;
+	 width: calc(100% - (var(--positionImageRight) * 1% + var(--positionImageLeft) * 1% ));
+	 height: calc(100% - (var(--positionImageTop) * 1% + var(--positionImageBottom) * 1% ));
+	 object-fit: contain;
+}*/
+
+
+._fsEsY > .testing {
+	/* tmp for testing: */
+	background-color: lightblue;
+	text-align: center;
+}
+
+
+
+
+._fsEsY > .alert {
+	--_fsEsY-item-width:  100;
+	--_fsEsY-item-height: 12;
+}
+
+
+article._fsEsY > section { position: relative; overflow: hidden; }
+article._fsEsY > section > * { position: absolute; }
+
+
+/*article._fsEsY > section > img { max-height: 100%; max-width: 100%; }*/
+
+
+@media (          width <  768px) { ._fsEsY:not(#_fsEsY-3) { display: none; } }
+@media (768px  <= width < 1024px) { ._fsEsY:not(#_fsEsY-2) { display: none; } }
+@media (1024px <= width         ) { ._fsEsY:not(#_fsEsY-1) { display: none; } }
+	
+
+article._fsEsY > section > div.text > .button { border: none; }
+
+._fsEsY .button svg {
+  filter: invert(1);
+  mix-blend-mode: difference
+}
+
+
+/*--*/
+
+
+@supports not (display: grid) {
+
+	._fsEsY {
+		display: block;
+	}
+
+	._fsEsY > * {
+		float: left;
+	}
+
+	._fsEsY:after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+
+}
+
+/*--*/
+
+
+</style>
+
+<div hidden>
+    <script language="html-template" id="_fsEsY_childrensTemplate">
+        <section class="_">
+            <img></img>
+            <div class="text">
+                <p class="text1 _"></p>
+                <p class="text2 _"></p>
+
+
+            </div>
+        <div class="text">
+                <a href="javascript:;" class="button btn btn--small">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21.051" height="13.534" viewBox="0 0 21.051 13.534">
+                        <path d="M1,10.266a.752.752,0,0,1,.752-.752H19.483l-4.732-4.73A.753.753,0,1,1,15.816,3.72L21.83,9.734a.752.752,0,0,1,0,1.065l-6.014,6.014a.753.753,0,1,1-1.065-1.065l4.732-4.73H1.752A.752.752,0,0,1,1,10.266Z" transform="translate(-1 -3.499)" fill="currentColor" fill-rule="evenodd" style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
+                    </svg>
+                </a>
+                <!--
+                <button class="button"></button>
+                -->
+            </div>
+        </section>
+    </script>
+    <script>
+    void function() { // handle elem attr `data-js-expose-size`
+        //var selector = '[data-js-expose-size]';
+        var els = document.querySelectorAll('[data-js-expose-size]');
+        if (!els.length) return;
+
+        function updateEl(els) {
+            els.forEach(el=>{
+                var sizes = el.getAttribute('data-js-expose-size').split(','); // note: no null check, leave native error
+
+                if (!sizes.length) return;
+
+                var elRect = el.getBoundingClientRect();
+                /*if (1 <= sizes.length) */ {
+                    var i = sizes.shift();
+                    el.style.setProperty(i, elRect.width);
+                    el.style.setProperty(i+'-px', elRect.width+'px');
+                }
+
+                if (1 <= sizes.length) {
+                    var i = sizes.shift();
+                    el.style.setProperty(i, elRect.width);
+                    el.style.setProperty(i+'-px', elRect.width+'px');
+                }
+            });
+        }
+
+        window.addEventListener('resize', function(e) {
+            var els = document.querySelectorAll('[data-js-expose-size]');
+            updateEl(els);
+        });
+        updateEl(els); // init
+    }();
+
+    //////
+    var _fsEsY_childrensTemplate = document.getElementById('_fsEsY_childrensTemplate');
+
+    function Promise_Deferred() {
+        var resolve, reject;
+        var promise = new Promise((res, rej) => {
+            resolve = res;
+            reject = rej;
+        });
+        promise.resolve = resolve;
+        promise.reject  = reject;
+
+        return promise;
+    }
+
+    async function waitForLib(globalName, scriptId) {
+        if (window[globalName]) return window[globalName];
+        
+        var scriptEl = document.all[scriptId];
+        if (!scriptEl) {
+            if (!(document.readyState === "complete" || document.readyState === "interactive")) {
+                await new Promise(o => document.addEventListener("DOMContentLoaded", o));
+                if (window[globalName]) return window[globalName];
+                scriptEl = document.all[scriptId];
+            }
+            if (!scriptEl) throw [new Error('cant find scritp ID: '+scriptId ), {globalName, scriptId}];
+        }
+
+        await new Promise((o, x) => {
+            scriptEl.addEventListener('load', o);
+            scriptEl.addEventListener('error', e => { x([new Error('scriptEl failed to load'), {globalName, scriptId}]); });
+        });
+
+        if (window[globalName]) return window[globalName];
+
+        throw [new Error('cant find global variable' ), {globalName, scriptId}];								
+    }
+
+
+    void function() {
+
+
+
+        function _fsEsY_htmlLayouts_fetch(_fsEsY_layout_tip, show_error_cb) {
+            var deferred = Promise_Deferred();
+
+
+            var fetchPromise =
+                fetch('?tip=' + _fsEsY_layout_tip, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                    body: 'tip='+_fsEsY_layout_tip
+                })
+            ;
+            var resJsonPromise = new Promise((o,x) => fetchPromise.then(res => {
+                if (!res.ok) {
+                    x(res); return;
+                }
+                
+                var contentType = res.headers.get("content-type");
+                if (!( contentType && contentType.includes("application/json") )) {
+                    x(res); return;
+                }
+
+                res.json().then(data => o([data, res]) ).catch(x);
+            }));
+
+
+            waitForLib('show_alert', 'jslib-show_alert').then(function() {
+                show_alert.attatchToFetchReq([fetchPromise, resJsonPromise], false).then(o => {
+                    show_error_cb(o.alertResult.$alertElem[0] /*, o.alertResult, o*/);
+                });
+            });
+
+            var resJsonPromise_last = resJsonPromise.then(([data, ]) => {
+                if (data.error_code) {
+                    deferred.reject(new Error(['ajax response err', data]));
+                    return;
+                }
+
+                var result;
+                try {
+                    result = _fsEsY_htmlLayouts_fetch.dataToHtml(data.tranport);
+                } catch (e) {
+                    deferred.reject(e);
+                    return;
+                }
+                deferred.resolve( result );
+            });
+            resJsonPromise_last .catch(err => deferred.reject([new Error('fetch fail'), err]) );
+            fetchPromise        .catch(err => deferred.reject([new Error('fetch fail'), err]) );
+
+            return deferred;
+        };
+
+
+    ///something happen here/
+
+        var _fsEsY_htmlLayouts_fetch_dataToHtml_tmpEl = document.createElement('div');
+        _fsEsY_htmlLayouts_fetch.dataToHtml = function(dataArr) {
+
+            return [
+                '--_fsEsY_gap:'+((dataArr[0].razst + '').replace(/px$|$/s, 'px'))+';', // style
+                dataArr.map(data => {
+                    var elem;
+                    {
+                        var tmpEl = _fsEsY_htmlLayouts_fetch_dataToHtml_tmpEl;
+                        tmpEl.innerHTML = _fsEsY_childrensTemplate.innerHTML;
+                        elem = tmpEl.firstElementChild;
+                        tmpEl.innerHTML = '';
+                    }
+
+                    { // fill the data
+
+                        {	// section
+                            elem.style.background = data.background_hex;
+
+                            elem.style.setProperty('--_fsEsY-item-width' , data.width_pc );
+                            elem.style.setProperty('--_fsEsY-item-height', data.height_pc);
+
+                            elem.style.setProperty('--_fsEsY_gap-top',     data.container_padding_top    );
+                            elem.style.setProperty('--_fsEsY_gap-right',   data.container_padding_right  );
+                            elem.style.setProperty('--_fsEsY_gap-bottom',  data.container_padding_bottom );
+                            elem.style.setProperty('--_fsEsY_gap-left',    data.container_padding_left   );
+                        }
+
+                        {	// section > div.text
+                            var el = elem.querySelector('div.text');
+                            _fsEsY_ajaxResponseData_positionElem(el, data.text_data_positin);
+                            el.style.padding =
+                                ['top','right','bottom','left']
+                                .map( direction => data['text_data_margin_px_'+direction] || 0 )
+                                .map( pxDigit => (pxDigit+'').replace(/px$|$/s, '%') )
+                                .join(' ')
+                            ;
+                            _fsEsY_ajaxResponseData_positionElem(el, data.text_data_positin);
+                        }
+
+                        for (var i of [1, 2]) { // section > div.text > span.text${i}
+                            var el = elem.querySelector('div.text > .text'+i);
+                            el.textContent = data.text_data['text'+i];
+                            el.style.setProperty('--_fsEsY-data-text-text_font_size_rem' , data.text_data['text'+i+'_font_size_rem']+'');
+                            el.style.color = data.text_data['text'+(i===1?'': i)+'_color_hex'];
+                            if (data.text_data['text'+i+'_font_bold']) el.style.fontWeight = 'bold';
+                        }
+
+                        {	// section > div.text > .button
+                            var el = elem.querySelector('div.text > .button');
+                            el.style.background  = data.text_data.button_color_hex;
+                            
+                            if (el.tagName === 'A') {
+                                el.href = data.text_data.button_url;
+                                
+                            } else if (el.tagName === 'BUTTON') {
+                                el.onclick = _ => location.href = data.text_data.button_url;
+                                
+                            } else {
+                                console.error(new Error('unexpected el.tag'));
+                            }
+                        }
+
+                        { // section > img
+                            var el = elem.querySelector('img');
+                            el.src = data.img_url;
+
+                            _fsEsY_ajaxResponseData_positionElem(el, data.img_position);
+                            // NOTE:! margin breaks `transform: translate(-50%)`
+                            
+                            
+                            el.style.setProperty('--positionImageRight', data.pic_padding_right);
+                            el.style.setProperty('--positionImageLeft', data.pic_padding_left);
+                            el.style.setProperty('--positionImageBottom', data.pic_padding_bottom);
+                            el.style.setProperty('--positionImageTop', data.pic_padding_top);
+                            
+    //													el.style.marginRight  = (data.pic_padding_right   +'').replace(/px$|$/s, '%');
+    //													el.style.marginLeft   = (data.pic_padding_left    +'').replace(/px$|$/s, '%');
+    //													el.style.marginBottom = (data.pic_padding_bottom  +'').replace(/px$|$/s, '%');
+    //													el.style.marginTop    = (data.pic_padding_top     +'').replace(/px$|$/s, '%');
+                        }
+
+                        function _fsEsY_ajaxResponseData_positionElem(el, position) {
+
+                            var [x, y] = position.split('-');
+
+                            // fast fix values
+                            if ('top,up,bottom,down'.split(',').includes(x) || 'left,right'.split(',').includes(y)) {
+                                console.info('fast fix values: ', [{el}, y+'-'+x]);
+                                return _fsEsY_ajaxResponseData_positionElem(el, y+'-'+x);
+                            }
+
+                            el.style.transform = 'translate(var(--_fsEsY_transform_x, 0), var(--_fsEsY_transform_y, 0))';
+                            // el.style.setProperty('--_fsEsY_transform_x', '0');
+                            // el.style.setProperty('--_fsEsY_transform_y', '0');
+
+                            if (x === 'left') {
+                                el.style.left = '0';
+                            } else if (x === 'center') {
+                                el.style.left = '50%';
+                                el.style.setProperty('--_fsEsY_transform_x', '-50%');
+                            } else if (x === 'right') {
+                                el.style.right = '0';
+                            } else {
+                                console.warn('unexpected value for X position', [{el, position}, {x, y}]);
+                            }
+
+                            if (y === 'top' || y === 'up') {
+                                el.style.top = '0';
+                            } else if (y === 'center') {
+                                el.style.top = '50%';
+                                el.style.setProperty('--_fsEsY_transform_y', '-50%');
+                            } else if (y === 'bottom' || y === 'down') {
+                                el.style.bottom = '0';
+                            } else {
+                                console.warn('unexpected value for Y position', [{el, position}, {x, y}]);
+                            }
+
+                        }
+                    }
+
+                    return elem;
+                })
+            ];
+        }
+
+
+        window._fsEsY_onLayoutChange = async function(_fsEsY_layout_tip) {
+            var _fsEsY_current = document.getElementById('_fsEsY-'+_fsEsY_layout_tip);
+
+            if (_fsEsY_current.classList.contains('loaded' )) { console.info('(_fsEsY_current = #_fsEsY-'+_fsEsY_layout_tip+'), is already loaded' , _fsEsY_current); return; }
+            if (_fsEsY_current.classList.contains('loading')) { console.info('(_fsEsY_current = #_fsEsY-'+_fsEsY_layout_tip+'), is already loading', _fsEsY_current); return; }
+
+            _fsEsY_current.classList.remove('pre-loading');
+            _fsEsY_current.classList.add('loading');
+
+            _fsEsY_current.innerHTML = 'Зареждане. . .';
+
+            var haveIRunShowError = false;
+            try {
+                //console.log('setting _fsEsY_current.innerHTML 1, getting reddy', _fsEsY_layout_tip);
+
+
+                var [containerStyle, _fsEsY_current_childrenArr] = await _fsEsY_htmlLayouts_fetch(_fsEsY_layout_tip, function(alertEl) {
+                    _fsEsY_current.style = '';
+                    _fsEsY_current.innerHTML =
+                        '<div style="--_fsEsY-item-width: 100; --_fsEsY-item-height: 100;">'+
+                            '<button type=button onclick="_fsEsY_onLayoutChange('+_fsEsY_layout_tip+')">Опитай отново</button>'+
+                        '</div>'+
+                    '';
+                    ;
+                    _fsEsY_current.lastElementChild.insertAdjacentElement('afterbegin', alertEl); haveIRunShowError = true;
+                    console.error(['failed to load _fsEsY layout', arguments]);
+                });
+
+
+                _fsEsY_current.classList.remove('loading');
+                //console.log('setting _fsEsY_current.innerHTML 2, data:' , _fsEsY_current_childrenArr);
+
+                _fsEsY_current.innerHTML = '';
+                _fsEsY_current.style = containerStyle || '';
+                _fsEsY_current_childrenArr.forEach(el => _fsEsY_current.appendChild(el) );
+
+                _fsEsY_current.classList.add('loaded');
+
+                //console.log('setting _fsEsY_current.innerHTML 3 = done', _fsEsY_layout_tip);
+            } catch (e) {
+                _fsEsY_current.classList.remove('loading');
+                //_fsEsY_current.classList.remove('loaded');
+                _fsEsY_current.classList.remove('load-failed');
+                
+                var eArr;
+                if (Array.isArray(e)) {
+                    eArr = e;
+                    e = e.shift();
+                } else {
+                    eArr = [];
+                }
+
+                if (haveIRunShowError) {
+                    console.warn('note: show_alert must have been run for current error', e, eArr);
+                    return;
+                }
+
+
+                console.error('htmlLayouts at catch error:', e, eArr);
+                
+
+                if (e.constructor === Error) { // if manually thrown error / not reference error
+                    _fsEsY_current.style = '';
+                    _fsEsY_current.innerHTML =
+                        '<div style="--_fsEsY-item-width: 100; --_fsEsY-item-height: 100;">'+
+                            '<button type=button onclick="_fsEsY_onLayoutChange('+_fsEsY_layout_tip+')">Опитай отново</button>'+
+                        '</div>'+
+                    '';
+                } else {
+                    _fsEsY_current.style = '';
+                    _fsEsY_current.innerHTML =
+                        '<div style="--_fsEsY-item-width: 100; --_fsEsY-item-height: 100;">'+
+                            'Друга грешка.'+
+                        '</div>'+
+                    '';
+                }
+            }
+        };
+
+
+
+        ;[
+            ['(          width <  768px)', e => _fsEsY_onLayoutChange(3, e)], // mobile
+            ['(768px  <= width < 1024px)', e => _fsEsY_onLayoutChange(2, e)], // tablem
+            ['(1024px <= width         )', e => _fsEsY_onLayoutChange(1, e)], // desktop
+        ].map(([queryStr, cb], i) => {
+            var query = window.matchMedia(queryStr);
+
+            // once
+            if (query.matches) {
+                cb.call(query, {type: 'init'});
+            } else {
+                query.onchange = e => {
+                    if (!query.matches) return;
+                    cb.call(query, e);
+                    query.onchange = null;
+                };
+            }
+            // NOTE:... event.maches seems to be wrong, use query.matches
+            return query;
+        });
+
+
+
+
+    }();
+    </script>
+</div>

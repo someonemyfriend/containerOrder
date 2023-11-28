@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderImgInsideBox</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+   <section class="wrapper-container"> 
+    <h1>Версия, в която имаме два дива FLOAT LEFT with 5 div и започваме да гледаме снимката как се държи вътре. Като целта е да се гледа по X и Y</h1>
+    <div class='container-idontknow' style='display:block; float:left;'>
+
+        <div class='cell'
+            style='
+            width:30%; 
+            height:100% ; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child"
+                style="background: aqua;
+                    margin: 5px;  
+                    flex: auto 1 0;
+            ">
+                <h2>col 1</h2>
+                <img src="stol.png" alt="">
+            </div>
+        </div>
+        
+        
+        <div class='cell'
+            style='
+            width:20%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child" 
+                style="background: aqua;
+                    margin: 5px;  
+                    flex: auto 1 0;
+            "> 
+                <h2>col 2</h2>
+                <img src="masa.png" alt="">
+            </div>
+        </div>
+
+
+        <div class='cell'
+            style='
+            width:20%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '>
+            <div class="cell-child"
+                style="background: aqua;
+                    margin: 5px;  
+                    flex: auto 1 0;
+            "> 
+                <h2>col 3</h2>
+                <img src="masa.png" alt="">
+            </div>
+        </div>
+
+
+        <div class='cell'
+            style=' 
+            width: 20%;
+            height: 50%;
+            float: left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child" style="background: aqua;
+                margin: 5px;  
+                flex: auto 1 0;
+            "> 
+                <h2>col 4</h2>
+                <img src="masa.png" alt="">
+            </div>    
+        </div>
+
+        <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child" style="background: rgb(255, 0, 255);
+                margin: 5px;  
+                flex: auto 1 0;
+            "> 
+                <h2>col 5</h2>
+                <img src="masa.png" alt="">
+            </div>    
+        </div>
+        <!-- <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;'> 
+                <div class="cell-child" style="background: aqua;
+                margin: 5px;  
+                flex: auto 1 0;
+                "> col 6</div>    
+        </div> -->
+    
+    </div>
+   </section>
+   <section class="wrapper-container"> 
+    <h1>Версия, aspect-ratio Като целта е да се гледа по X и Y</h1>
+    <div class='container-idontknow' style='display:block; float:left;'>
+
+        <div class='cell'
+            style='
+            width:30%; 
+            height:100% ; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child"
+                style="background: aqua;
+                    margin: 5px;  
+                    flex: auto 1 0;
+            ">
+                <h2>col 1</h2>
+                <img src="stol.png" alt="">
+            </div>
+        </div>
+        
+        
+        <div class='cell'
+            style='
+            width:20%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child" 
+                style="background: aqua;
+                    margin: 5px;  
+                    flex: auto 1 0;
+            "> 
+                <h2>col 2</h2>
+                <img src="masa.png" alt="">
+            </div>
+        </div>
+
+        <div class='cell'
+            style='
+            width:20%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '>
+            <div class="cell-child"
+                style="background: aqua;
+                    margin: 5px;  
+                    flex: auto 1 0;
+            "> 
+                <h2>col 3</h2>
+                <img src="masa.png" alt="">
+            </div>
+        </div>
+
+        <div class='cell'
+            style=' 
+            width: 20%;
+            height: 50%;
+            float: left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child" style="background: aqua;
+                margin: 5px;  
+                flex: auto 1 0;
+            "> 
+                <h2>col 4</h2>
+                <img src="masa.png" alt="">
+            </div>    
+        </div>
+
+        <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div class="cell-child" style="background: rgb(255, 0, 255);
+                margin: 5px;  
+                flex: auto 1 0;
+            "> 
+                <h2>col 5</h2>
+                <img src="masa.png" alt="">
+            </div>    
+        </div>    
+    </div>
+   </section>
+
+   <section class="wrapper-container" >
+    <h1>Версия, в която имаме два дива FLOAT LEFT with 6 div</h1>
+    <div class='container' style='float:left; margin-bottom: 140px;'>
+
+        <div class='cell'
+            style='width:30%; 
+            height:100% ; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div  class="cell-child-fit-content cell-child-fit-content-one"  style="background: rgb(76, 0, 255);
+              
+            flex: auto 1 0;
+            ">
+                
+                <img src="stol.png" alt="">
+            </div>
+        </div>
+        
+        
+        <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div  class="cell-child-fit-content cell-child-fit-content-two"  style="background: rgb(166, 255, 0);
+              
+            flex: auto 1 0;
+            "> 
+            
+            <img src="masa.png" alt="">
+            </div>
+        </div>
+
+
+        <div class='cell'
+            style='width:20%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '>
+            <div  class="cell-child-fit-content cell-child-fit-content-three"  style="background: aqua;
+              
+            flex: auto 1 0;
+            "> 
+            <img src="masa.png" alt=""></div>
+        </div>
+
+
+        <div class='cell'
+            style=' width: 20%;
+            height: 50%;
+            float: left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div  class="cell-child-fit-content cell-child-fit-content-four"  style="background: aqua;
+              
+            flex: auto 1 0;
+            ">
+            <img src="masa.png" alt=""></div>    
+        </div>
+
+        <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;'> 
+                <div  class="cell-child-fit-content cell-child-fit-content-five"  style="background: rgb(255, 0, 255);
+                  
+                flex: auto 1 0;
+                ">
+                <img src="masa.png" alt=""></div>    
+        </div>
+    
+    </div>
+   </section>
+   
+   <section class="wrapper-container" >
+    <h1>Версия, в която имаме два дива FLOAT LEFT with 6 div</h1>
+    <div class='container' style='float:left; margin-bottom: 140px;'>
+
+        <div class='cell'
+            style='width:30%; 
+            height:100% ; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div  class="cell-child-fit-content cell-child-fit-content-one"  style="background: rgb(76, 0, 255);
+              
+            flex: auto 1 0;
+            ">
+                
+                <img src="stol.png" alt="">
+            </div>
+        </div>
+        
+        
+        <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div  class="cell-child-fit-content cell-child-fit-content-two"  style="background: rgb(166, 255, 0);
+              
+            flex: auto 1 0;
+            "> 
+            
+            <img src="masa.png" alt="">
+            </div>
+        </div>
+
+
+        <div class='cell'
+            style='width:20%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '>
+            <div  class="cell-child-fit-content cell-child-fit-content-three"  style="background: aqua;
+              
+            flex: auto 1 0;
+            "> 
+            <img src="masa.png" alt=""></div>
+        </div>
+
+
+        <div class='cell'
+            style=' width: 20%;
+            height: 50%;
+            float: left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        '> 
+            <div  class="cell-child-fit-content cell-child-fit-content-four"  style="background: aqua;
+              
+            flex: auto 1 0;
+            ">
+            <img src="masa.png" alt=""></div>    
+        </div>
+
+        <div class='cell'
+            style='width:50%; 
+            height:50%; 
+            float:left;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;'> 
+                <div  class="cell-child-fit-content cell-child-fit-content-five"  style="background: rgb(255, 0, 255);
+                  
+                flex: auto 1 0;
+                ">
+                <img src="masa.png" alt=""></div>    
+        </div>
+    
+    </div>
+   </section>
+
+</body>
+</html>
